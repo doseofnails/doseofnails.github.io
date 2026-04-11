@@ -272,7 +272,7 @@ Best regards,
 Dose of Nails Team
 
 ---
-Follow us on Instagram: @doseofnails
+Follow us on Instagram: @_doseofnails_
 WhatsApp: +62 857-2485-4406
 ```
 
