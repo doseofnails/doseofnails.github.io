@@ -84,10 +84,10 @@ const translations = {
     "team.description": "With attention to detail and creativity, we’re here to give you a comfortable experience and results you’ll absolutely love.",
     "team.fadhilah.name": "Fadhilah",
     "team.fadhilah.role": "Senior Nail Artist",
-    "team.fadhilah.bio": "Fadhilah has a strong passion for nail art, especially detailed and unique 3D designs",
+    "team.fadhilah.bio": "Fadhilah has a strong passion for nail art, especially detailed and unique 3D designs. With a keen eye for artistry and a deep love for creativity, Fadhilah brings every client's nail vision to life with precision and care. Whether it's an intricate 3D sculpture or a minimalist masterpiece, Fadhilah is dedicated to making sure every set feels personal, polished, and absolutely stunning.",
     "team.amelia.name": "Amelia",
     "team.amelia.role": "Senior Press-on Specialist",
-    "team.amelia.bio": "Amelia is an expert in press-on nails—practical yet stylish, perfect for everyday beauty",
+    "team.amelia.bio": "Amelia is an expert in press-on nails — practical yet stylish, perfect for everyday beauty. With a sharp sense of style and a genuine passion for making nails accessible to everyone, Amelia crafts custom press-on sets that are as durable as they are beautiful. She believes that gorgeous nails shouldn't be complicated, and she's here to make sure every client leaves feeling confident and effortlessly glam.",
     
     // Booking
     "booking.title": "Ready for a glow-up? Book now!",
@@ -200,10 +200,10 @@ const translations = {
     "team.description": "Dengan sentuhan detail dan kreativitas, kami siap kasih pengalaman yang nyaman sekaligus hasil yang bikin kamu jatuh cinta!",
     "team.fadhilah.name": "Fadhilah",
     "team.fadhilah.role": "Senior Nail Artist",
-    "team.fadhilah.bio": "Fadhilah punya passion besar di dunia nail art, terutama untuk desain detail dan 3D yang unik.",
+    "team.fadhilah.bio": "Fadhilah punya passion yang besar banget di dunia nail art, terutama desain 3D yang detail dan unik. Dengan mata seni yang tajam dan rasa cinta yang tulus terhadap kreativitas, Fadhilah siap bantu wujudkan kuku impian kamu dengan teliti dan penuh perhatian. Mau desain 3D yang rumit atau tampilan minimalis yang elegan, Fadhilah selalu pastikan hasilnya terasa personal, rapi, dan bikin kamu nggak mau berhenti lihat kuku sendiri!",
     "team.amelia.name": "Amelia",
     "team.amelia.role": "Senior Press On Specialist",
-    "team.amelia.bio": "Amelia adalah expert di dunia press-on nails yang praktis tapi tetap stylish.",
+    "team.amelia.bio": "Amelia adalah jagoannya press-on nails — praktis, kece, dan cocok buat kamu yang mau tampil cantik tiap hari tanpa ribet! Dengan selera style yang oke dan semangat buat bikin kuku cantik bisa dinikmati semua orang, Amelia siap buatin set press-on custom yang tahan lama sekaligus aesthetic. Karena buat Amelia, kuku cantik itu hak semua orang — dan dia di sini buat pastiin kamu pulang dengan penuh percaya diri dan senyum yang nggak bisa disembunyiin.",
     
     // Booking
     "booking.title": "Siap Glowup? Yuk booking sekarang!",
