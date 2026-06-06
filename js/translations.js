@@ -149,6 +149,11 @@ const translations = {
 		"blog.previewTitle": "From Our Blog",
 		"blog.previewSubtitle": "Tips, trends, and nail care inspiration",
 		"blog.viewAll": "View All Articles",
+
+		// Reviews
+		"reviews.title": "What Our Clients Say",
+		"reviews.subtitle":
+			"Real experiences from real customers — share yours too!",
 	},
 	id: {
 		// Header
@@ -299,5 +304,10 @@ const translations = {
 		"blog.previewTitle": "Dari Blog Kami",
 		"blog.previewSubtitle": "Tips, tren, dan inspirasi perawatan kuku",
 		"blog.viewAll": "Lihat Semua Artikel",
+
+		// Reviews
+		"reviews.title": "Apa Kata Pelanggan Kami",
+		"reviews.subtitle":
+			"Pengalaman nyata dari pelanggan kami — bagikan pengalaman kamu juga!",
 	},
 };
