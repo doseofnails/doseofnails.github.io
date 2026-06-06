@@ -96,6 +96,43 @@
 
 		<!-- Cusdis -->
 		<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+		<!-- Script to separate Comments and Form -->
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const thread = document.getElementById("cusdis_thread");
+				const commentsContainer = document.getElementById(
+					"cusdis-comments-container",
+				);
+				const formContainer = document.getElementById(
+					"cusdis-form-container",
+				);
+
+				// Watch for Cusdis to finish loading its HTML
+				const observer = new MutationObserver((mutations, obs) => {
+					// Find the form and the comment list inside the hidden Cusdis div
+					const form = thread.querySelector("form");
+					const comments =
+						thread.querySelector(".cusdis-comments") ||
+						thread.querySelector("[class*='comment']");
+
+					// If both are found, move them to our custom containers
+					if (form && comments) {
+						// 1. Move comments to the top container
+						commentsContainer.appendChild(comments);
+
+						// 2. Move form to the bottom container
+						formContainer.appendChild(form);
+
+						// Stop watching once done to save performance
+						obs.disconnect();
+					}
+				});
+
+				// Start observing the hidden Cusdis div
+				observer.observe(thread, { childList: true, subtree: true });
+			});
+		</script>
 	</head>
 	<body class="min-h-screen">
 		<!-- Header -->
@@ -827,6 +864,21 @@
 					<p class="text-lg opacity-70" data-i18n="reviews.subtitle">
 						Real experiences from real customers — share yours too!
 					</p>
+				</div>
+
+				<!-- 1. Comments Container (Displays FIRST) -->
+				<div id="cusdis-comments-container" style="margin-bottom: 2rem">
+					<!-- Comments will be automatically moved here -->
+				</div>
+
+				<!-- Optional: Add a heading or divider between comments and form -->
+				<h3 style="text-align: center; margin: 2rem 0 1rem">
+					Leave a Reply
+				</h3>
+
+				<!-- 2. Form Container (Displays SECOND) -->
+				<div id="cusdis-form-container">
+					<!-- Form will be automatically moved here -->
 				</div>
 
 				<!-- Cusdis comment thread -->
