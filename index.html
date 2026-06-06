@@ -94,6 +94,21 @@
 			})();
 		</script>
 
+		<!-- Cusdis -->
+		<script>
+			window.CUSDIS_LOCALE = "en";
+			window.cusdis = {
+				attrs: {
+					host: "https://cusdis.com",
+					appId: "c8a99a1b-8502-48b4-b9ef-fac831735c63",
+					pageId: "dose-of-nails-reviews",
+					pageTitle: "Dose of Nails Reviews",
+					pageUrl: "https://doseofnails.github.io",
+					commentContainer: "#cusdis-comments", // where comments render
+					formContainer: "#cusdis-form", // where form renders
+				},
+			};
+		</script>
 		<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 	</head>
 	<body class="min-h-screen">
@@ -830,15 +845,11 @@
 
 				<!-- Cusdis comment thread -->
 				<!-- ⚠️  Replace YOUR_APP_ID with your actual Cusdis app ID from cusdis.com -->
-				<div
-					id="cusdis_thread"
-					data-host="https://cusdis.com"
-					data-app-id="c8a99a1b-8502-48b4-b9ef-fac831735c63"
-					data-page-id="dose-of-nails-reviews"
-					data-page-url="https://doseofnails.github.io/"
-					data-page-title="Dose of Nails — Customer Reviews"
-					class="mt-4"
-				></div>
+				<!-- Display approved comments here (e.g. top of section) -->
+				<div id="cusdis-comments"></div>
+
+				<!-- Review form here (e.g. bottom, or different spot) -->
+				<div id="cusdis-form"></div>
 			</div>
 		</section>
 
