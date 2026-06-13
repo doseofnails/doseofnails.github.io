@@ -94,95 +94,12 @@
 			})();
 		</script>
 
-		<!-- Cusdis -->
-		<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
 		<!-- Cusdis Script -->
-		<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-		<!-- Script to inject CSS into Cusdis iframe and reverse order -->
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				const thread = document.getElementById("cusdis_thread");
-				if (!thread) return;
-
-				// The CSS we want to inject into the iframe
-				const additionalStyles = `
-					/* 1. Make the main wrapper a flex column */
-					#root > div {
-						display: flex !important;
-						flex-direction: column !important;
-					}
-
-					/* 2. Move Comments to the top */
-					#root > div.mt-4 {
-						order: 1 !important;
-					}
-
-					/* 3. Move Form to the second position */
-					#root > div.grid {
-						order: 2 !important;
-						margin-top: 2rem !important; /* Replaces the hidden spacer */
-					}
-
-					/* 4. Inject the "Leave a Reply" heading above the form */
-					#root > div.grid::before {
-						content: "Leave a Reply" !important;
-						display: block !important;
-						text-align: center !important;
-						font-size: 1.875rem !important; /* Matches text-3xl */
-						font-weight: 700 !important;    /* Matches font-bold */
-						margin: 2rem 0 1rem !important;
-						color: inherit !important;      /* Adapts to dark mode automatically */
-					}
-
-					/* 5. Hide the original spacer between the form and comments */
-					#root > div.grid + div.my-8 {
-						display: none !important;
-					}
-
-					/* 6. Keep the "Powered by Cusdis" footer at the bottom */
-					#root > div.my-8:last-of-type {
-						order: 3 !important;
-					}
-				`;
-
-				function injectCSS(iframe) {
-					if (
-						iframe &&
-						iframe.srcdoc &&
-						iframe.srcdoc.includes("</style>")
-					) {
-						// Inject our CSS right before the closing </style> tag in the iframe
-						iframe.srcdoc = iframe.srcdoc.replace(
-							"</style>",
-							additionalStyles + "</style>",
-						);
-					}
-				}
-
-				// Check if iframe already exists (in case script runs late)
-				const existingIframe = thread.querySelector("iframe");
-				if (existingIframe) {
-					injectCSS(existingIframe);
-				}
-
-				// Observe for iframe creation (standard Cusdis behavior)
-				const observer = new MutationObserver((mutations) => {
-					mutations.forEach((mutation) => {
-						if (mutation.addedNodes.length) {
-							mutation.addedNodes.forEach((node) => {
-								if (node.tagName === "IFRAME") {
-									injectCSS(node);
-								}
-							});
-						}
-					});
-				});
-
-				observer.observe(thread, { childList: true, subtree: true });
-			});
-		</script>
+		<script
+			async
+			defer
+			src="https://cusdis-opal.vercel.app/js/cusdis.es.js"
+		></script>
 	</head>
 	<body class="min-h-screen">
 		<!-- Header -->
@@ -919,7 +836,7 @@
 				<!-- Cusdis comment thread (Keep ONLY this div) -->
 				<div
 					id="cusdis_thread"
-					data-host="https://cusdis.com"
+					data-host="https://cusdis-opal.vercel.app"
 					data-app-id="c8a99a1b-8502-48b4-b9ef-fac831735c63"
 					data-page-id="dose-of-nails-reviews"
 					data-page-url="https://doseofnails.github.io/"
