@@ -12,7 +12,7 @@ const ARTICLES_DATA = [
 		slug: "how-to-take-care-of-your-nails",
 		date: "2025-05-20",
 		category: "care",
-		cover_image: "", // optional — paste an image URL here
+		cover_image: "img/", // optional — paste an image URL here
 
 		title_en: "How to Take Care of Your Nails",
 		title_id: "Cara Merawat Kuku Kamu",
@@ -273,6 +273,8 @@ Before removing your press-on nails, prepare the following items:
 
 Fill a bowl with warm water and add a small amount of mild soap. Soak your fingertips for 10–15 minutes to help loosen the adhesive holding the press-on nails in place. The warm water softens the glue, making the removal process easier and safer.
 
+![Soaking press-on nails in warm water](/img/background.JPG)
+
 ## Step 2: Apply Cuticle Oil
 
 After soaking your nails, apply cuticle oil around the edges of each press-on nail. Allow the oil to seep underneath the nail for a few minutes. This helps break down the adhesive and reduces the risk of damaging your natural nails during removal.
@@ -332,6 +334,8 @@ Sebelum melepas press-on nails, siapkan beberapa perlengkapan berikut:
 ## Langkah 1: Rendam Kuku dalam Air Hangat
 
 Isi mangkuk dengan air hangat dan tambahkan sedikit sabun cair. Rendam ujung jari selama sekitar 10–15 menit. Air hangat akan membantu melunakkan lem sehingga press-on nails lebih mudah dilepas tanpa merusak kuku asli.
+
+![Merendam kuku dalam air hangat](/img/background.JPG)
 
 ## Langkah 2: Aplikasikan Minyak Kutikula
 
