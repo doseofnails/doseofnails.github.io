@@ -27,6 +27,7 @@ Healthy and well-maintained nails not only improve your appearance but also refl
 
 Before starting your nail care routine, prepare the following items:
 
+![Nail clippers](https://images.unsplash.com/photo-1559818469-a289200df0b1?q=80&w=1089&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 - Nail clippers
 - Nail file
 - Cuticle oil or moisturizer
