@@ -1,1173 +1,687 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-CPG08W5LZK"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
-
-			gtag("config", "G-CPG08W5LZK");
-		</script>
-
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dose of Nails - Your Daily dose of Nails</title>
-
-		<!-- Tailwind CSS CDN -->
-		<script src="https://cdn.tailwindcss.com"></script>
-
-		<!-- Lucide Icons -->
-		<script src="https://unpkg.com/lucide@latest"></script>
-
-		<style>
-			/* Custom styles to match the design */
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			body {
-				font-family:
-					-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-					"Helvetica Neue", Arial, sans-serif;
-			}
-
-			/* Header fixed positioning */
-			header {
-				transition: box-shadow 0.3s ease;
-			}
-
-			/* Smooth transitions */
-			* {
-				transition-property: color, background-color, border-color;
-				transition-duration: 200ms;
-				transition-timing-function: ease-in-out;
-			}
-
-			/* Custom scrollbar */
-			::-webkit-scrollbar {
-				width: 10px;
-			}
-
-			::-webkit-scrollbar-track {
-				background: #f1f1f1;
-			}
-
-			::-webkit-scrollbar-thumb {
-				background: #888;
-				border-radius: 5px;
-			}
-
-			::-webkit-scrollbar-thumb:hover {
-				background: #555;
-			}
-
-			/* Image lazy loading effect */
-			img {
-				opacity: 1;
-				transition: opacity 0.3s ease-in-out;
-			}
-
-			img[loading="lazy"]:not([src]) {
-				opacity: 0;
-			}
-
-			/* Prevent SVG children from being click targets */
-			button svg,
-			button i {
-				pointer-events: none;
-			}
-		</style>
-
-		<!-- EmailJS SDK -->
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-		></script>
-		<script type="text/javascript">
-			(function () {
-				// Initialize EmailJS with your public key
-				// Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key from emailjs.com
-				emailjs.init("L7V3dgsgQulRtaIxt");
-			})();
-		</script>
-
-		<!-- Cusdis Script -->
-		<script
-			async
-			defer
-			src="https://cusdis-opal.vercel.app/js/cusdis.es.js"
-		></script>
+		<title data-i18n="meta.title">
+			Dose of Nails - Your Daily dose of Nails
+		</title>
+		<!-- Link to your existing CSS here -->
+		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body class="min-h-screen">
-		<!-- Header -->
-		<header
-			class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm border-b"
-		>
-			<div
-				class="container mx-auto px-4 py-4 flex items-center justify-between"
-			>
-				<div class="flex items-center gap-2">
-					<!-- <i data-lucide="sparkles" class="w-6 h-6"></i> -->
-					<img
-						src="img/apple-touch-icon.png"
-						alt="Dose of Nails Logo"
-						class="w-6 h-6"
-					/>
-					<span class="font-semibold text-lg">Dose of Nails</span>
-				</div>
+	<body>
+		<!-- HEADER & NAVIGATION -->
+		<header>
+			<div class="logo">Dose of Nails</div>
+			<nav>
+				<a href="#about" data-i18n="nav.aboutUs">About Us</a>
+				<a href="#services" data-i18n="nav.serviceProduct"
+					>Service & Product</a
+				>
+				<a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+				<a href="#contact" data-i18n="nav.contact">Contact</a>
+				<a href="#blog" data-i18n="nav.articles">Articles</a>
+			</nav>
 
-				<nav class="hidden md:flex items-center gap-8">
-					<a
-						href="#about"
-						class="hover:text-gray-600 transition-colors"
-						data-i18n="nav.aboutUs"
-					></a>
-					<a
-						href="#services"
-						class="hover:text-gray-600 transition-colors"
-						data-i18n="nav.serviceProduct"
-					></a>
-					<a
-						href="#gallery"
-						class="hover:text-gray-600 transition-colors"
-						data-i18n="nav.gallery"
-					></a>
-					<a
-						href="#contact"
-						class="hover:text-gray-600 transition-colors"
-						data-i18n="nav.contact"
-					></a>
-					<a
-						href="/articles/"
-						class="hover:text-gray-600 transition-colors"
-						data-i18n="nav.articles"
-					></a>
-				</nav>
-
-				<div class="flex items-center gap-3">
-					<!-- Language Switcher -->
-					<div class="relative">
-						<button
-							id="language-button"
-							onclick="toggleDropdown()"
-							class="flex items-center gap-2 px-4 py-2 border rounded-md hover:bg-gray-50 transition-colors"
-						>
-							<i data-lucide="globe" class="w-4 h-4"></i>
-							<span id="language-display" class="uppercase"
-								>EN</span
-							>
-						</button>
-
-						<div
-							id="language-dropdown"
-							class="hidden absolute right-0 mt-2 w-48 bg-white border rounded-md shadow-lg z-50"
-						>
-							<button
-								onclick="setLanguage('en')"
-								class="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
-							>
-								English
-							</button>
-							<button
-								onclick="setLanguage('id')"
-								class="w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
-							>
-								Bahasa Indonesia
-							</button>
-						</div>
-					</div>
-
-					<a
-						href="#contact"
-						class="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
-						data-i18n="nav.bookNow"
-					>
-					</a>
-				</div>
+			<!-- Language Switcher -->
+			<div class="lang-switcher">
+				<button id="lang-en" class="active">EN</button>
+				<button id="lang-id">ID</button>
 			</div>
+
+			<a href="#contact" class="btn-primary" data-i18n="nav.bookNow"
+				>Book Now</a
+			>
 		</header>
 
-		<!-- Hero Section -->
-		<section class="relative h-screen flex items-center justify-center">
-			<div class="absolute inset-0">
-				<img
-					src="img/header baru.jpg"
-					alt="Dose of Nails Salon Interior"
-					class="w-full h-full object-cover"
-				/>
-				<div class="absolute inset-0 bg-black/50"></div>
-			</div>
-
-			<div
-				class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto"
-			>
-				<h1
-					class="mb-6 text-5xl md:text-6xl lg:text-7xl font-bold"
-					data-i18n="hero.title"
-				></h1>
-				<p
-					class="text-xl md:text-2xl mb-8 leading-relaxed"
-					data-i18n="hero.description"
-				></p>
-				<div class="flex gap-4 justify-center flex-wrap">
+		<!-- HERO SECTION -->
+		<section id="hero" class="hero-section">
+			<div class="hero-content">
+				<h1 data-i18n="hero.title">
+					Your glow-up starts at your fingertips!
+				</h1>
+				<p data-i18n="hero.description">
+					Looking for a little self-care? We’re here to make your nail
+					goals come true. From simple and elegant designs to fun and
+					creative nail art, Dose of Nails is the perfect choice to
+					refresh, and leave with nails you’ll love.
+				</p>
+				<div class="hero-buttons">
 					<a
-						class="px-8 py-3 text-lg border-2 border-white text-white rounded-md hover:bg-gray-100 transition-colors"
-						data-i18n="hero.bookAppointment"
 						href="#contact"
+						class="btn-primary"
+						data-i18n="hero.bookAppointment"
+						>Book an Appointment</a
 					>
-					</a>
 					<a
 						href="#services"
-						class="px-8 py-3 text-lg border-2 border-white text-white rounded-md hover:bg-white/10 transition-colors"
+						class="btn-secondary"
 						data-i18n="hero.viewServices"
+						>Explore our Services</a
 					>
-					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- Introduction & Highlights -->
-		<section class="py-20 px-4 bg-white">
-			<!-- Introduction -->
-			<div class="max-w-4xl mx-auto text-center mb-20">
-				<h2
-					class="text-4xl md:text-5xl font-bold mb-6"
-					data-i18n="intro.heading"
-				></h2>
-				<p
-					class="text-lg leading-relaxed opacity-80"
-					data-i18n="intro.description"
-				></p>
-			</div>
+		<!-- INTRODUCTION -->
+		<section id="intro" class="intro-section">
+			<h2 data-i18n="intro.heading">Welcome to Dose of Nails</h2>
+			<p data-i18n="intro.description">
+				We’re more than just a nail studio, we’re a choice for you to
+				take a break, treat yourself, and express your style. Whether
+				you’re here for a simple manicure or detailed nail art, we’re
+				excited to help you achieve a look that makes you feel confident
+				and happy. Sit back, relax, and let us take care of the rest.
+			</p>
+		</section>
 
-			<!-- Highlights -->
-			<div class="max-w-7xl mx-auto">
-				<h2
-					class="text-4xl font-bold text-center mb-12"
-					data-i18n="highlights.title"
-				></h2>
-
-				<div class="grid md:grid-cols-2 gap-12">
-					<!-- Nail Art Service -->
-					<div
-						class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+		<!-- HIGHLIGHTS -->
+		<section id="highlights" class="highlights-section">
+			<h2 data-i18n="highlights.title">What we have for you</h2>
+			<div class="highlight-cards">
+				<div class="card">
+					<h3 data-i18n="highlights.nailArt.title">
+						Nail Art Service
+					</h3>
+					<p data-i18n="highlights.nailArt.description">
+						Your nails, your style. From soft and classy looks to
+						trendy and eye-catching designs, we create nail art that
+						helps you feel confident and express yourself in your
+						own style.
+					</p>
+					<a
+						href="#gallery"
+						class="btn"
+						data-i18n="highlights.nailArt.button"
+						>Explore Nail Art</a
 					>
-						<div class="relative h-80">
-							<img
-								src="img/nail art service.JPG"
-								alt="Nail Art Service"
-								class="w-full h-full object-cover"
-							/>
-							<div
-								class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-							></div>
-							<div
-								class="absolute bottom-0 left-0 right-0 p-8 text-white"
-							>
-								<div class="flex items-center gap-2 mb-3">
-									<i
-										data-lucide="sparkles"
-										class="w-6 h-6"
-									></i>
-									<h3
-										class="text-2xl font-bold"
-										data-i18n="highlights.nailArt.title"
-									></h3>
-								</div>
-								<p
-									class="mb-6 leading-relaxed"
-									data-i18n="highlights.nailArt.description"
-								></p>
-								<a
-									href="#gallery"
-									class="px-6 py-3 bg-white text-black rounded-md hover:bg-gray-100 transition-colors"
-									data-i18n="highlights.nailArt.button"
-								>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Press on Nails -->
-					<div
-						class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+				</div>
+				<div class="card">
+					<h3 data-i18n="highlights.pressOn.title">Press-on Nails</h3>
+					<p data-i18n="highlights.pressOn.description">
+						Beautiful nails are what we want, right? Our handmade
+						press-on nails give you a salon inspired look in just
+						minutes, making them perfect for busy days, special
+						events, or whenever you want a quick glow-up. Our
+						press-on nails package is already included; cuticle
+						pusher, nail buffer, alcohol swab, and glue gel.
+					</p>
+					<a
+						href="#products"
+						class="btn"
+						data-i18n="highlights.pressOn.button"
+						>Shop Press Ons</a
 					>
-						<div class="relative h-80">
-							<img
-								src="img/shop presson.HEIC"
-								alt="Press on Nails"
-								class="w-full h-full object-cover"
-							/>
-							<div
-								class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
-							></div>
-							<div
-								class="absolute bottom-0 left-0 right-0 p-8 text-white"
-							>
-								<div class="flex items-center gap-2 mb-3">
-									<i
-										data-lucide="package"
-										class="w-6 h-6"
-									></i>
-									<h3
-										class="text-2xl font-bold"
-										data-i18n="highlights.pressOn.title"
-									></h3>
-								</div>
-								<p
-									class="mb-6 leading-relaxed"
-									data-i18n="highlights.pressOn.description"
-								></p>
-								<a
-									href="#gallery"
-									class="px-6 py-3 bg-white text-black rounded-md hover:bg-gray-100 transition-colors"
-									data-i18n="highlights.pressOn.button"
-								>
-								</a>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- About Us Section -->
-		<section id="about" class="py-20 px-4 bg-gray-50">
-			<div class="max-w-7xl mx-auto">
-				<h2
-					class="text-4xl font-bold text-center mb-16"
-					data-i18n="about.title"
-				></h2>
+		<!-- ABOUT US -->
+		<section id="about" class="about-section">
+			<h2 data-i18n="about.title">About Us</h2>
 
-				<!-- Background Story -->
-				<div class="max-w-4xl mx-auto mb-16 text-center">
-					<h3
-						class="text-2xl font-bold mb-4"
-						data-i18n="about.background.title"
-					></h3>
-					<p
-						class="text-lg leading-relaxed opacity-80"
-						data-i18n="about.background.description"
-					></p>
+			<div class="about-story">
+				<h3 data-i18n="about.background.title">Our Story</h3>
+				<p data-i18n="about.background.description">
+					Dose of Nails began with a simple passion for creativity and
+					self-expression. What started as a hobby of experimenting
+					with different nail designs soon grew into a dream of
+					creating nails to make people feel confident, relaxed, and
+					beautiful. We noticed that many people wanted stylish, high
+					quality nails but often struggled to find a place that truly
+					understood their personal style. That inspired us to build a
+					brand that combines creativity, comfort, and attention to
+					detail in every service we provide. The name Dose of Nails
+					reflects our belief that everyone deserves a little boost of
+					confidence and happiness in their daily lives. Just like a
+					daily dose of something you love, beautiful nails can
+					brighten your mood and help you express who you are. From
+					elegant everyday looks to unique artistic designs, every set
+					of nails is created with care, passion, and a commitment to
+					making each client feel special. Today, Dose of Nails is
+					more than just a nail studio. It is a welcoming space where
+					creativity comes to life and every client is treated like a
+					friend. We are dedicated to helping you express your
+					personality through beautiful nails while ensuring every
+					visit is comfortable, enjoyable, and memorable. Whether you
+					are preparing for a special occasion or simply treating
+					yourself, we are here to bring your nail ideas to life and
+					give you a little extra confidence with every appointment.
+				</p>
+			</div>
+
+			<div class="about-values">
+				<h3 data-i18n="about.values.title">Why you'll love it here</h3>
+				<div class="value-item">
+					<h4 data-i18n="about.values.homeService">Home Service</h4>
+					<p data-i18n="about.values.homeServiceDesc">
+						Don’t feel like going out? No worries, we come to you!
+						Enjoy professional nail care from the comfort of your
+						home.
+					</p>
 				</div>
-
-				<!-- Brand Values -->
-				<div class="mb-16">
-					<h3
-						class="text-2xl font-bold text-center mb-12"
-						data-i18n="about.values.title"
-					></h3>
-					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-						<!-- Home Service -->
-						<div
-							class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-						>
-							<div class="flex justify-center mb-4">
-								<div
-									class="w-16 h-16 bg-black rounded-full flex items-center justify-center"
-								>
-									<i
-										data-lucide="home"
-										class="w-8 h-8 text-white"
-									></i>
-								</div>
-							</div>
-							<h4
-								class="text-xl font-bold text-center mb-3"
-								data-i18n="about.values.homeService"
-							></h4>
-							<p
-								class="text-center text-sm opacity-80 leading-relaxed"
-								data-i18n="about.values.homeServiceDesc"
-							></p>
-						</div>
-
-						<!-- Creativity -->
-						<div
-							class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-						>
-							<div class="flex justify-center mb-4">
-								<div
-									class="w-16 h-16 bg-black rounded-full flex items-center justify-center"
-								>
-									<i
-										data-lucide="palette"
-										class="w-8 h-8 text-white"
-									></i>
-								</div>
-							</div>
-							<h4
-								class="text-xl font-bold text-center mb-3"
-								data-i18n="about.values.creativity"
-							></h4>
-							<p
-								class="text-center text-sm opacity-80 leading-relaxed"
-								data-i18n="about.values.creativityDesc"
-							></p>
-						</div>
-
-						<!-- Hygiene -->
-						<div
-							class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-						>
-							<div class="flex justify-center mb-4">
-								<div
-									class="w-16 h-16 bg-black rounded-full flex items-center justify-center"
-								>
-									<i
-										data-lucide="shield"
-										class="w-8 h-8 text-white"
-									></i>
-								</div>
-							</div>
-							<h4
-								class="text-xl font-bold text-center mb-3"
-								data-i18n="about.values.hygiene"
-							></h4>
-							<p
-								class="text-center text-sm opacity-80 leading-relaxed"
-								data-i18n="about.values.hygieneDesc"
-							></p>
-						</div>
-
-						<!-- Professional -->
-						<div
-							class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow"
-						>
-							<div class="flex justify-center mb-4">
-								<div
-									class="w-16 h-16 bg-black rounded-full flex items-center justify-center"
-								>
-									<i
-										data-lucide="award"
-										class="w-8 h-8 text-white"
-									></i>
-								</div>
-							</div>
-							<h4
-								class="text-xl font-bold text-center mb-3"
-								data-i18n="about.values.professional"
-							></h4>
-							<p
-								class="text-center text-sm opacity-80 leading-relaxed"
-								data-i18n="about.values.professionalDesc"
-							></p>
-						</div>
-					</div>
+				<div class="value-item">
+					<h4 data-i18n="about.values.creativity">Creativity</h4>
+					<p data-i18n="about.values.creativityDesc">
+						Every nail is a canvas. We’re here to bring your ideas
+						to life with unique and eye-catching nail art.
+					</p>
 				</div>
+				<div class="value-item">
+					<h4 data-i18n="about.values.hygiene">Hygiene</h4>
+					<p data-i18n="about.values.hygieneDesc">
+						Your safety is our priority. We maintain high standards
+						of cleanliness and sanitation for every treatment.
+					</p>
+				</div>
+				<div class="value-item">
+					<h4 data-i18n="about.values.professional">Professional</h4>
+					<p data-i18n="about.values.professionalDesc">
+						Our team is dedicated to providing quality service with
+						precision, comfort, and attention to detail.
+					</p>
+				</div>
+			</div>
 
-				<!-- Mission Statement -->
-				<div
-					class="max-w-4xl mx-auto text-center bg-black text-white rounded-2xl p-12"
+			<div class="about-mission">
+				<h3 data-i18n="about.mission.title">Our Mission</h3>
+				<p data-i18n="about.mission.statement">
+					At Dose of Nails, our mission is to make self-care
+					enjoyable, accessible, and personalized for everyone. We are
+					dedicated to creating beautiful nails that reflect your
+					unique style while providing a home service and friendly
+					nail artist where you can feel comfortable being yourself.
+				</p>
+			</div>
+		</section>
+
+		<!-- SERVICES & PRODUCTS -->
+		<section id="services" class="services-section">
+			<h2 data-i18n="serviceProduct.title">Services & Products</h2>
+
+			<div class="tabs">
+				<button
+					class="tab-btn active"
+					data-i18n="serviceProduct.servicesTab"
 				>
-					<h3
-						class="text-2xl font-bold mb-6"
-						data-i18n="about.mission.title"
-					></h3>
-					<p class="text-lg leading-relaxed italic">
-						"<span data-i18n="about.mission.statement"></span>"
+					Services
+				</button>
+				<button class="tab-btn" data-i18n="serviceProduct.productsTab">
+					Products
+				</button>
+			</div>
+
+			<div id="services-content" class="tab-content active">
+				<h3 data-i18n="serviceProduct.services.title">Our Services</h3>
+				<div class="service-item">
+					<h4 data-i18n="serviceProduct.services.manicure.title">
+						Manicure
+					</h4>
+					<p data-i18n="serviceProduct.services.manicure.description">
+						A basic nail treatment that instantly makes your hands
+						look cleaner, neater, and fresh. Includes shaping,
+						cuticle care, and a polished finish.
+					</p>
+					<span
+						class="price"
+						data-i18n="serviceProduct.services.manicure.price"
+						>Only For Rp. 35.000</span
+					>
+				</div>
+				<div class="service-item">
+					<h4 data-i18n="serviceProduct.services.gelArt.title">
+						Gel Polish
+					</h4>
+					<p data-i18n="serviceProduct.services.gelArt.description">
+						Express your unique style with long-lasting and detailed
+						gel polish. From plain looks to artistic designs,
+						everything can be customized.
+					</p>
+					<span
+						class="price"
+						data-i18n="serviceProduct.services.gelArt.price"
+						>Start at Rp. 70.000</span
+					>
+				</div>
+				<div class="service-item">
+					<h4 data-i18n="serviceProduct.services.3dDesign.title">
+						Soft Gel Tip Extension
+					</h4>
+					<p data-i18n="serviceProduct.services.3dDesign.description">
+						Want longer nails with a flawless shape? Soft gel tips
+						are perfect for achieving a natural yet elegant
+						appearance.
+					</p>
+					<span
+						class="price"
+						data-i18n="serviceProduct.services.3dDesign.price"
+						>Starts at Rp. 120.000</span
+					>
+				</div>
+			</div>
+
+			<div id="products-content" class="tab-content">
+				<h3 data-i18n="serviceProduct.products.title">Our Products</h3>
+				<div class="product-item">
+					<h4 data-i18n="serviceProduct.products.pressOn.title">
+						Press-on Nails
+					</h4>
+					<p data-i18n="serviceProduct.products.pressOn.description">
+						Beautiful nails without the hassle! Just apply and
+						instantly look like you just stepped out of a salon,
+						Easy to use at home and ready in minutes.
+					</p>
+					<span
+						class="price"
+						data-i18n="serviceProduct.products.pressOn.price"
+						>Starts at Rp. 60.000</span
+					>
+				</div>
+			</div>
+		</section>
+
+		<!-- GALLERY -->
+		<section id="gallery" class="gallery-section">
+			<h2 data-i18n="gallery.title">Our Gallery</h2>
+			<p data-i18n="gallery.subtitle">
+				Explore our latest nail art creations that are sure to make you
+				fall in love
+			</p>
+
+			<div class="gallery-filters">
+				<button
+					class="filter-btn active"
+					data-i18n="gallery.filter.all"
+				>
+					All
+				</button>
+				<button class="filter-btn" data-i18n="gallery.filter.basic">
+					Basic
+				</button>
+				<button class="filter-btn" data-i18n="gallery.filter.moderate">
+					Moderate
+				</button>
+				<button class="filter-btn" data-i18n="gallery.filter.advanced">
+					Advanced
+				</button>
+			</div>
+
+			<div class="gallery-grid">
+				<div class="gallery-item" data-category="basic">
+					<img
+						src="gallery/basic1.jpg"
+						alt="Basic 1"
+						data-i18n="[alt]gallery.caption.basic1"
+					/>
+					<p data-i18n="gallery.caption.basic1">
+						Clean lines, effortless elegance
+					</p>
+				</div>
+				<div class="gallery-item" data-category="basic">
+					<img
+						src="gallery/basic2.jpg"
+						alt="Basic 2"
+						data-i18n="[alt]gallery.caption.basic2"
+					/>
+					<p data-i18n="gallery.caption.basic2">
+						Simple, polished, and beautiful
+					</p>
+				</div>
+				<div class="gallery-item" data-category="basic">
+					<img
+						src="gallery/basic3.jpg"
+						alt="Basic 3"
+						data-i18n="[alt]gallery.caption.basic3"
+					/>
+					<p data-i18n="gallery.caption.basic3">
+						Timeless nails for everyday wear
+					</p>
+				</div>
+				<div class="gallery-item" data-category="moderate">
+					<img
+						src="gallery/mod1.jpg"
+						alt="Mod 1"
+						data-i18n="[alt]gallery.caption.moderate1"
+					/>
+					<p data-i18n="gallery.caption.moderate1">
+						Creative designs that stand out
+					</p>
+				</div>
+				<div class="gallery-item" data-category="moderate">
+					<img
+						src="gallery/mod2.jpg"
+						alt="Mod 2"
+						data-i18n="[alt]gallery.caption.moderate2"
+					/>
+					<p data-i18n="gallery.caption.moderate2">
+						Expressive art at your fingertips
+					</p>
+				</div>
+				<div class="gallery-item" data-category="moderate">
+					<img
+						src="gallery/mod3.jpg"
+						alt="Mod 3"
+						data-i18n="[alt]gallery.caption.moderate3"
+					/>
+					<p data-i18n="gallery.caption.moderate3">
+						Bold patterns with refined detail
+					</p>
+				</div>
+				<div class="gallery-item" data-category="advanced">
+					<img
+						src="gallery/adv1.jpg"
+						alt="Adv 1"
+						data-i18n="[alt]gallery.caption.advanced1"
+					/>
+					<p data-i18n="gallery.caption.advanced1">
+						Intricate artistry, masterfully crafted
+					</p>
+				</div>
+				<div class="gallery-item" data-category="advanced">
+					<img
+						src="gallery/adv2.jpg"
+						alt="Adv 2"
+						data-i18n="[alt]gallery.caption.advanced2"
+					/>
+					<p data-i18n="gallery.caption.advanced2">
+						Complex designs that captivate
+					</p>
+				</div>
+				<div class="gallery-item" data-category="advanced">
+					<img
+						src="gallery/adv3.jpg"
+						alt="Adv 3"
+						data-i18n="[alt]gallery.caption.advanced3"
+					/>
+					<p data-i18n="gallery.caption.advanced3">
+						High-detail nail art at its finest
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- Services & Products Section -->
-		<section id="services" class="py-20 px-4">
-			<div class="max-w-7xl mx-auto">
-				<h2
-					class="text-4xl font-bold text-center mb-12"
-					data-i18n="serviceProduct.title"
-				></h2>
+		<!-- TEAM -->
+		<section id="team" class="team-section">
+			<h2 data-i18n="team.title">Meet Our Team</h2>
+			<p data-i18n="team.description">
+				With attention to detail and creativity, we’re here to give you
+				a comfortable experience and results you’ll absolutely love.
+			</p>
 
-				<!-- Tabs -->
-				<div class="flex justify-center mb-12">
-					<div class="inline-flex bg-gray-100 rounded-lg p-1">
-						<button
-							class="tab-button px-6 py-3 rounded-md flex items-center gap-2 transition-all"
-							data-tab="services"
-							onclick="switchTab('services')"
-						>
-							<i data-lucide="sparkles" class="w-4 h-4"></i>
-							<span data-i18n="serviceProduct.servicesTab"></span>
-						</button>
-						<button
-							class="tab-button px-6 py-3 rounded-md flex items-center gap-2 transition-all"
-							data-tab="products"
-							onclick="switchTab('products')"
-						>
-							<i data-lucide="package" class="w-4 h-4"></i>
-							<span data-i18n="serviceProduct.productsTab"></span>
-						</button>
-					</div>
-				</div>
-
-				<!-- Services Tab Content -->
-				<div class="tab-content" data-tab="services">
-					<h3
-						class="text-2xl font-bold text-center mb-8"
-						data-i18n="serviceProduct.services.title"
-					></h3>
-					<div class="grid md:grid-cols-3 gap-8">
-						<!-- Manicure -->
-						<div
-							class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-						>
-							<div class="h-64 overflow-hidden">
-								<img
-									src="https://images.unsplash.com/photo-1604654894610-df63bc536371?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW5pY3VyZXxlbnwxfHx8fDE3NjMzNTA1NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-									alt="Manicure"
-									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-								/>
-							</div>
-							<div class="p-6">
-								<h4
-									class="text-xl font-bold mb-3"
-									data-i18n="serviceProduct.services.manicure.title"
-								></h4>
-								<p
-									class="text-sm opacity-80 mb-4 leading-relaxed"
-									data-i18n="serviceProduct.services.manicure.description"
-								></p>
-								<div class="flex items-center justify-between">
-									<span
-										class="font-semibold text-lg"
-										data-i18n="serviceProduct.services.manicure.price"
-									></span>
-									<a
-										href="#contact"
-										class="px-4 py-2 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
-									>
-										Book Now
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- Nail Art Gel -->
-						<div
-							class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-						>
-							<div class="h-64 overflow-hidden">
-								<img
-									src="img/gambar gel polish.jpeg"
-									alt="Nail Art Gel"
-									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-								/>
-							</div>
-							<div class="p-6">
-								<h4
-									class="text-xl font-bold mb-3"
-									data-i18n="serviceProduct.services.gelArt.title"
-								></h4>
-								<p
-									class="text-sm opacity-80 mb-4 leading-relaxed"
-									data-i18n="serviceProduct.services.gelArt.description"
-								></p>
-								<div class="flex items-center justify-between">
-									<span
-										class="font-semibold text-lg"
-										data-i18n="serviceProduct.services.gelArt.price"
-									></span>
-									<a
-										href="#contact"
-										class="px-4 py-2 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
-									>
-										Book Now
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<!-- 3D Design -->
-						<div
-							class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-						>
-							<div class="h-64 overflow-hidden">
-								<img
-									src="img/gambar soft gel tip extension.jpeg"
-									alt="3D Design"
-									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-								/>
-							</div>
-							<div class="p-6">
-								<h4
-									class="text-xl font-bold mb-3"
-									data-i18n="serviceProduct.services.3dDesign.title"
-								></h4>
-								<p
-									class="text-sm opacity-80 mb-4 leading-relaxed"
-									data-i18n="serviceProduct.services.3dDesign.description"
-								></p>
-								<div class="flex items-center justify-between">
-									<span
-										class="font-semibold text-lg"
-										data-i18n="serviceProduct.services.3dDesign.price"
-									></span>
-									<a
-										href="#contact"
-										class="px-4 py-2 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
-									>
-										Book Now
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Products Tab Content -->
-				<div class="tab-content hidden" data-tab="products">
-					<h3
-						class="text-2xl font-bold text-center mb-8"
-						data-i18n="serviceProduct.products.title"
-					></h3>
-					<div class="grid md:grid-cols-3 gap-8">
-						<!-- Press-on Nails -->
-						<div
-							class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-						>
-							<div class="h-64 overflow-hidden">
-								<img
-									src="img/press on nails.jpeg"
-									alt="Press-on Nails"
-									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-								/>
-							</div>
-							<div class="p-6">
-								<h4
-									class="text-xl font-bold mb-3"
-									data-i18n="serviceProduct.products.pressOn.title"
-								></h4>
-								<p
-									class="text-sm opacity-80 mb-4 leading-relaxed"
-									data-i18n="serviceProduct.products.pressOn.description"
-								></p>
-								<div class="flex items-center justify-between">
-									<span
-										class="font-semibold text-lg"
-										data-i18n="serviceProduct.products.pressOn.price"
-									></span>
-									<a
-										href="#contact"
-										class="px-4 py-2 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
-									>
-										Shop Now
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Gallery Section -->
-		<section id="gallery" class="py-20 px-4 bg-gray-50">
-			<div class="container mx-auto max-w-7xl">
-				<div class="text-center mb-12">
-					<h2
-						class="text-4xl font-bold mb-4"
-						data-i18n="gallery.title"
-					></h2>
-					<p
-						class="text-lg opacity-80"
-						data-i18n="gallery.subtitle"
-					></p>
-				</div>
-
-				<!-- Category Filters -->
-				<div class="flex flex-wrap justify-center gap-3 mb-12">
-					<button
-						class="gallery-filter-btn px-6 py-2 rounded-full border transition-colors"
-						data-category="all"
-						onclick="filterGallery('all')"
+			<div class="team-grid">
+				<div class="team-card">
+					<img src="team/fadhilah.jpg" alt="Fadhilah" />
+					<h3 data-i18n="team.fadhilah.name">Fadhilah</h3>
+					<span class="role" data-i18n="team.fadhilah.role"
+						>Senior Nail Artist</span
 					>
-						<span data-i18n="gallery.filter.all"></span>
-					</button>
-					<button
-						class="gallery-filter-btn px-6 py-2 rounded-full border transition-colors"
-						data-category="basic"
-						onclick="filterGallery('basic')"
+					<p data-i18n="team.fadhilah.bio">
+						Fadhilah has a strong passion for nail art, especially
+						detailed and unique 3D designs such as polkadots,
+						mermaid designs, etc. With creativity and precision,
+						Fadhilah brings every client’s nail vision to life.
+						Whether it’s an intricate sculpture or a minimalist
+						masterpiece, every set is crafted with care and
+						attention to detail.
+					</p>
+				</div>
+				<div class="team-card">
+					<img src="team/amelia.jpg" alt="Amelia" />
+					<h3 data-i18n="team.amelia.name">Amelia</h3>
+					<span class="role" data-i18n="team.amelia.role"
+						>Senior Press-on Specialist</span
 					>
-						<span data-i18n="gallery.filter.basic"></span>
-					</button>
-					<button
-						class="gallery-filter-btn px-6 py-2 rounded-full border transition-colors"
-						data-category="moderate"
-						onclick="filterGallery('moderate')"
+					<p data-i18n="team.amelia.bio">
+						Amelia specializes in press-on nails that are practical,
+						stylish, and perfect for everyday beauty. She creates
+						custom press-on sets that are durable, comfortable, and
+						effortlessly glamorous. Amelia believes beautiful nails
+						should always feel easy and accessible for everyone.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- BOOKING / CONTACT -->
+		<section id="contact" class="booking-section">
+			<h2 data-i18n="booking.title">Ready for a glow-up? Book now!</h2>
+			<p data-i18n="booking.description">
+				Fill out the form below and our team will get in touch with you
+				soon to confirm your appointment. Quick, easy, and hassle-free.
+			</p>
+
+			<div class="booking-container">
+				<form class="booking-form">
+					<input
+						type="text"
+						data-i18n="[placeholder]booking.namePlaceholder"
+						placeholder="Your name"
+						required
+					/>
+					<input
+						type="tel"
+						data-i18n="[placeholder]booking.phonePlaceholder"
+						placeholder="Your phone number"
+						required
+					/>
+					<input
+						type="email"
+						data-i18n="[placeholder]booking.emailPlaceholder"
+						placeholder="Your email"
+						required
+					/>
+					<select
+						data-i18n="[placeholder]booking.servicePlaceholder"
+						required
 					>
-						<span data-i18n="gallery.filter.moderate"></span>
-					</button>
+						<option
+							value=""
+							disabled
+							selected
+							data-i18n="booking.service"
+						>
+							Service
+						</option>
+						<option value="manicure">Manicure</option>
+						<option value="gel">Gel Polish</option>
+						<option value="extension">Soft Gel Tip</option>
+						<option value="presson">Press-on Nails</option>
+					</select>
+					<textarea
+						data-i18n="[placeholder]booking.messagePlaceholder"
+						placeholder="Any special requests or questions?"
+						rows="4"
+					></textarea>
 					<button
-						class="gallery-filter-btn px-6 py-2 rounded-full border transition-colors"
-						data-category="advanced"
-						onclick="filterGallery('advanced')"
+						type="submit"
+						class="btn-primary"
+						data-i18n="booking.submit"
 					>
-						<span data-i18n="gallery.filter.advanced"></span>
+						Request Appointment
 					</button>
-				</div>
+				</form>
 
-				<!-- Gallery Grid -->
-				<div
-					id="gallery-grid"
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-				>
-					<!-- Gallery items will be dynamically inserted here by gallery.js -->
-				</div>
-			</div>
-		</section>
-
-		<!-- Reviews Section -->
-		<section id="reviews" class="py-20 px-4 bg-white">
-			<div class="container mx-auto max-w-4xl">
-				<!-- Heading -->
-				<div class="text-center mb-12">
-					<h2
-						class="text-4xl font-bold mb-4"
-						data-i18n="reviews.title"
-					></h2>
-					<p
-						class="text-lg opacity-70"
-						data-i18n="reviews.subtitle"
-					></p>
-				</div>
-
-				<!-- Cusdis comment thread (Keep ONLY this div) -->
-				<div
-					id="cusdis_thread"
-					data-host="https://cusdis-opal.vercel.app"
-					data-app-id="fa9375a5-b7a1-4078-a88a-7069abc75f8e"
-					data-page-id="dose-of-nails-reviews"
-					data-page-url="https://doseofnails.github.io/"
-					data-page-title="Dose of Nails — Customer Reviews"
-					class="mt-4"
-				></div>
-			</div>
-		</section>
-
-		<!-- Team Section -->
-		<section id="team" class="py-20 px-4 bg-gray-50">
-			<div class="container mx-auto max-w-6xl">
-				<div class="text-center mb-12">
-					<h2
-						class="text-4xl font-bold mb-4"
-						data-i18n="team.title"
-					></h2>
-					<p class="text-gray-600" data-i18n="team.description"></p>
-				</div>
-				<div
-					class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-				>
-					<!-- Fadhilah -->
-					<div class="bg-white rounded-xl overflow-hidden shadow-lg">
-						<div class="aspect-square relative">
-							<img
-								src="img/team, fadhilah.HEIC"
-								alt="Fadhilah"
-								class="w-full h-full object-cover"
-							/>
-						</div>
-						<div class="p-6">
-							<h3
-								class="text-2xl font-bold mb-1"
-								data-i18n="team.fadhilah.name"
-							>
-								Fadhilah
-							</h3>
-							<p
-								class="text-gray-600 mb-3"
-								data-i18n="team.fadhilah.role"
-							></p>
-							<p
-								class="text-gray-500"
-								data-i18n="team.fadhilah.bio"
-							></p>
-						</div>
+				<div class="contact-info">
+					<h3 data-i18n="booking.visitUs">Visit Us</h3>
+					<div class="info-item">
+						<h4 data-i18n="booking.location">Location</h4>
+						<p data-i18n="booking.locationAddress">
+							Jalan Gegerkalong Hilir No. 201, Bumi Nena<br />Bandung,
+							Indonesia
+						</p>
 					</div>
-
-					<!-- Amelia -->
-					<div class="bg-white rounded-xl overflow-hidden shadow-lg">
-						<div class="aspect-square relative">
-							<img
-								src="img/teh amel.jpeg"
-								alt="Amelia"
-								class="w-full h-full object-cover"
-							/>
-						</div>
-						<div class="p-6">
-							<h3
-								class="text-2xl font-bold mb-1"
-								data-i18n="team.amelia.name"
-							>
-								Amelia
-							</h3>
-							<p
-								class="text-gray-600 mb-3"
-								data-i18n="team.amelia.role"
-							>
-								Senior Nail Technician
-							</p>
-							<p
-								class="text-gray-500"
-								data-i18n="team.amelia.bio"
-							></p>
-						</div>
+					<div class="info-item">
+						<h4 data-i18n="booking.hours">Hours</h4>
+						<p data-i18n="booking.hoursDetails">
+							Monday - Friday: 11:00 AM - 10:00 PM<br />Saturday -
+							Sunday: 10:00 AM - 09:00 PM
+						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Blog Preview Section -->
-		<section id="blog-preview-section" class="py-20 px-4 bg-white">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-12">
-					<h2
-						class="text-4xl font-bold mb-4"
-						data-i18n="blog.previewTitle"
-					></h2>
-					<p
-						class="text-lg opacity-80"
-						data-i18n="blog.previewSubtitle"
-					></p>
-				</div>
-				<div
-					id="blog-preview-grid"
-					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
-				></div>
-				<div class="text-center">
-					<a
-						href="/articles/"
-						class="px-8 py-3 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
-						data-i18n="blog.viewAll"
-					></a>
-				</div>
-			</div>
+		<!-- BLOG PREVIEW -->
+		<section id="blog" class="blog-section">
+			<h2 data-i18n="blog.previewTitle">From Our Blog</h2>
+			<p data-i18n="blog.previewSubtitle">
+				Tips, trends, and nail care inspiration
+			</p>
+			<a href="/articles" class="btn" data-i18n="blog.viewAll"
+				>View All Articles</a
+			>
 		</section>
 
-		<!-- Booking/Contact Section -->
-		<section id="contact" class="py-20 px-4">
-			<div class="container mx-auto max-w-6xl">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-					<div>
-						<h2
-							class="text-4xl font-bold mb-6"
-							data-i18n="booking.title"
-						></h2>
-						<p
-							class="text-gray-600 mb-8"
-							data-i18n="booking.description"
-						></p>
-						<div class="bg-white rounded-xl shadow-lg p-6">
-							<form id="booking-form" class="space-y-4">
-								<div
-									class="grid grid-cols-1 md:grid-cols-2 gap-4"
-								>
-									<div>
-										<label
-											class="block mb-2"
-											data-i18n="booking.name"
-										></label>
-										<input
-											type="text"
-											name="user_name"
-											class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
-											data-i18n="booking.namePlaceholder"
-											placeholder="Your name"
-											required
-										/>
-									</div>
-									<div>
-										<label
-											class="block mb-2"
-											data-i18n="booking.phone"
-										></label>
-										<input
-											type="tel"
-											name="user_phone"
-											class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
-											data-i18n="booking.phonePlaceholder"
-											placeholder="Your phone number"
-											required
-										/>
-									</div>
-								</div>
-								<div>
-									<label
-										class="block mb-2"
-										data-i18n="booking.email"
-									></label>
-									<input
-										type="email"
-										name="user_email"
-										class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
-										data-i18n="booking.emailPlaceholder"
-										placeholder="Your email"
-										required
-									/>
-								</div>
-								<div>
-									<label
-										class="block mb-2"
-										data-i18n="booking.service"
-									></label>
-									<input
-										type="text"
-										name="service"
-										class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
-										data-i18n="booking.servicePlaceholder"
-										placeholder="What nail service are you interested in?"
-									/>
-								</div>
-								<div>
-									<label
-										class="block mb-2"
-										data-i18n="booking.message"
-									></label>
-									<textarea
-										rows="4"
-										name="message"
-										class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
-										data-i18n="booking.messagePlaceholder"
-										placeholder="Any special requests or questions?"
-									></textarea>
-								</div>
-								<button
-									type="submit"
-									id="submit-btn"
-									class="w-full px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
-									data-i18n="booking.submit"
-								></button>
-							</form>
-						</div>
-					</div>
-
-					<div>
-						<h3
-							class="text-2xl font-bold mb-6"
-							data-i18n="booking.visitUs"
-						></h3>
-						<div class="space-y-6">
-							<div class="flex gap-4">
-								<div
-									class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i
-										data-lucide="map-pin"
-										class="w-6 h-6"
-									></i>
-								</div>
-								<div>
-									<h4
-										class="font-bold mb-1"
-										data-i18n="booking.location"
-									></h4>
-									<p
-										class="text-gray-600"
-										data-i18n="booking.locationAddress"
-									></p>
-								</div>
-							</div>
-							<div class="flex gap-4">
-								<div
-									class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i data-lucide="phone" class="w-6 h-6"></i>
-								</div>
-								<div>
-									<h4
-										class="font-bold mb-1"
-										data-i18n="booking.phone"
-									></h4>
-									<p class="text-gray-600">0857-2485-4406</p>
-								</div>
-							</div>
-							<div class="flex gap-4">
-								<div
-									class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i data-lucide="mail" class="w-6 h-6"></i>
-								</div>
-								<div>
-									<h4
-										class="font-bold mb-1"
-										data-i18n="booking.email"
-									></h4>
-									<p class="text-gray-600">
-										doseofnails@gmail.com
-									</p>
-								</div>
-							</div>
-							<div class="flex gap-4">
-								<div
-									class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0"
-								>
-									<i data-lucide="clock" class="w-6 h-6"></i>
-								</div>
-								<div>
-									<h4
-										class="font-bold mb-1"
-										data-i18n="booking.hours"
-									></h4>
-									<p
-										class="text-gray-600"
-										data-i18n="booking.hoursDetails"
-									></p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+		<!-- REVIEWS -->
+		<section id="reviews" class="reviews-section">
+			<h2 data-i18n="reviews.title">What Our Clients Say</h2>
+			<p data-i18n="reviews.subtitle">
+				Real experiences from real customers — share yours too!
+			</p>
+			<!-- Reviews carousel/grid goes here -->
 		</section>
 
-		<!-- Footer -->
-		<footer class="bg-black text-white py-12 px-4">
-			<div class="container mx-auto max-w-6xl">
-				<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-					<div>
-						<div class="flex items-center gap-2 mb-4">
-							<img
-								src="img/apple-touch-icon.png"
-								alt="Dose of Nails Logo"
-								class="w-6 h-6"
-							/>
-							<span class="font-semibold text-lg"
-								>Dose of Nails</span
-							>
-						</div>
-						<p class="text-gray-400" data-i18n="footer.tagline"></p>
-					</div>
-					<div>
-						<h4
-							class="font-bold mb-4"
-							data-i18n="footer.servicesTitle"
-						></h4>
-						<ul class="space-y-2 text-gray-400">
-							<li
+		<!-- FOOTER -->
+		<footer>
+			<div class="footer-content">
+				<div class="footer-col">
+					<h3>Dose of Nails</h3>
+					<p data-i18n="footer.tagline">
+						Your go-to place for beautiful nails that boost your
+						confidence every day. From simple care to detailed nail
+						art, everything is crafted with a professional touch and
+						a sense of style.
+					</p>
+				</div>
+				<div class="footer-col">
+					<h4 data-i18n="footer.servicesTitle">Services</h4>
+					<ul>
+						<li>
+							<a
+								href="#"
 								data-i18n="serviceProduct.services.manicure.title"
-							></li>
-							<li
+								>Manicure</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
 								data-i18n="serviceProduct.services.gelArt.title"
-							></li>
-							<li
+								>Gel Polish</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
 								data-i18n="serviceProduct.services.3dDesign.title"
-							></li>
-							<li
-								data-i18n="serviceProduct.products.pressOn.title"
-							></li>
-						</ul>
-					</div>
-					<div>
-						<h4
-							class="font-bold mb-4"
-							data-i18n="footer.quickLinks"
-						></h4>
-						<ul class="space-y-2 text-gray-400">
-							<li>
-								<a
-									href="#about"
-									class="hover:text-white transition-colors"
-									data-i18n="nav.aboutUs"
-								></a>
-							</li>
-							<li>
-								<a
-									href="#services"
-									class="hover:text-white transition-colors"
-									data-i18n="nav.serviceProduct"
-								></a>
-							</li>
-							<li>
-								<a
-									href="#gallery"
-									class="hover:text-white transition-colors"
-									data-i18n="nav.gallery"
-								></a>
-							</li>
-							<li>
-								<a
-									href="#contact"
-									class="hover:text-white transition-colors"
-									data-i18n="nav.contact"
-								></a>
-							</li>
-						</ul>
-					</div>
-					<div>
-						<h4
-							class="font-bold mb-4"
-							data-i18n="footer.followUs"
-						></h4>
-						<div class="space-y-3">
-							<a
-								href="https://instagram.com/_doseofnails_"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+								>Soft Gel Tip Extension</a
 							>
-								<div
-									class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
-								>
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 640 640"
-									>
-										<!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-										<path
-											d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z"
-										/>
-									</svg>
-								</div>
-								<span>@_doseofnails_</span>
-							</a>
-							<a
-								href="https://wa.me/6285724854406"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+						</li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4 data-i18n="footer.quickLinks">Quick Links</h4>
+					<ul>
+						<li>
+							<a href="#about" data-i18n="nav.aboutUs"
+								>About Us</a
 							>
-								<div
-									class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
-								>
-									<i
-										data-lucide="message-circle"
-										class="w-5 h-5"
-									></i>
-								</div>
-								<span>+62 857-2485-4406</span>
-							</a>
-						</div>
-					</div>
+						</li>
+						<li>
+							<a href="#gallery" data-i18n="nav.gallery"
+								>Gallery</a
+							>
+						</li>
+						<li>
+							<a href="#contact" data-i18n="nav.contact"
+								>Contact</a
+							>
+						</li>
+					</ul>
 				</div>
-				<div
-					class="border-t border-gray-800 pt-8 text-center text-gray-400"
-				>
-					<p data-i18n="footer.copyright"></p>
+				<div class="footer-col">
+					<h4 data-i18n="footer.followUs">Follow Us</h4>
+					<p>Instagram: @_doseofnails_</p>
+					<p>WhatsApp: +62 857-2485-4406</p>
+					<p>Email: doseofnails@gmail.com</p>
 				</div>
+			</div>
+			<div class="footer-bottom">
+				<p data-i18n="footer.copyright">
+					© 2025 Dose of Nails. All rights reserved.
+				</p>
 			</div>
 		</footer>
 
-		<!-- JavaScript Files -->
-		<script src="js/translations.js"></script>
-		<script src="js/language-switcher.js"></script>
-		<script src="js/gallery.js"></script>
-		<script src="js/tabs.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/articles-data.js"></script>
-		<script src="js/blog.js"></script>
-
-		<!-- Initialize Lucide Icons -->
+		<!-- TRANSLATIONS SCRIPT -->
+		<script src="translations.js"></script>
 		<script>
-			lucide.createIcons();
+			// Smart i18n Engine that handles your specific translations.js format
+			function applyTranslations(lang = "en") {
+				// Save language preference
+				localStorage.setItem("preferredLanguage", lang);
+				document.documentElement.lang = lang;
+
+				// Find all elements with data-i18n
+				const elements = document.querySelectorAll("[data-i18n]");
+
+				elements.forEach((el) => {
+					const key = el.getAttribute("data-i18n");
+
+					// Handle attribute translations like [placeholder]booking.namePlaceholder
+					if (key.startsWith("[")) {
+						const match = key.match(/\[(.*?)\](.*)/);
+						if (match) {
+							const attr = match[1];
+							const transKey = match[2].trim(); // .trim() fixes your trailing spaces!
+
+							if (
+								translations[lang] &&
+								translations[lang][transKey]
+							) {
+								el.setAttribute(
+									attr,
+									translations[lang][transKey].trim(),
+								);
+							}
+						}
+					}
+					// Handle standard text content
+					else {
+						const cleanKey = key.trim(); // .trim() fixes your trailing spaces!
+						if (
+							translations[lang] &&
+							translations[lang][cleanKey]
+						) {
+							// Use innerHTML to support <br> tags in translations like address/hours
+							el.innerHTML = translations[lang][cleanKey].trim();
+						}
+					}
+				});
+
+				// Update active state on language buttons
+				document
+					.getElementById("lang-en")
+					.classList.toggle("active", lang === "en");
+				document
+					.getElementById("lang-id")
+					.classList.toggle("active", lang === "id");
+			}
+
+			// Initialize on page load
+			document.addEventListener("DOMContentLoaded", () => {
+				const savedLang =
+					localStorage.getItem("preferredLanguage") || "en";
+				applyTranslations(savedLang);
+
+				// Language Switcher Listeners
+				document
+					.getElementById("lang-en")
+					.addEventListener("click", () => applyTranslations("en"));
+				document
+					.getElementById("lang-id")
+					.addEventListener("click", () => applyTranslations("id"));
+			});
 		</script>
 	</body>
 </html>
