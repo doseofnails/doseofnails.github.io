@@ -9,49 +9,52 @@ const translations = {
 		"nav.bookNow": "Book Now",
 
 		// Hero
-		"hero.title": "Your glow-up starts at your fingertips <3",
+		"hero.title": "Your glow-up starts at your fingertips!",
 		"hero.description":
-			"It’s time to treat yourself. Here, you can get beautiful nails with an elegant touch in a super comfy vibe. Whether you’re into classy or cute—everything is possible!",
+			"Looking for a little self-care? We’re here to make your nail goals come true. From simple and elegant designs to fun and creative nail art, Dose of Nails is the perfect choice to refresh, and leave with nails you’ll love.",
 		"hero.bookAppointment": "Book an Appointment",
 		"hero.viewServices": "Explore our Services",
 
 		// Introduction
 		"intro.heading": "Welcome to Dose of Nails",
 		"intro.description":
-			"Step into our modern nail art studio where creativity meets precision. At Dose of Nails, we combine artistry and attention to detail to create nails that truly reflect your style. Whether you prefer something simple & elegant or bold & eye-catching we got you covered.",
+			"We’re more than just a nail studio, we’re a choice for you to take a break, treat yourself, and express your style. Whether you’re here for a simple manicure or detailed nail art, we’re excited to help you achieve a look that makes you feel confident and happy. Sit back, relax, and let us take care of the rest.",
 
 		// Highlights
 		"highlights.title": "What we have for you",
 		"highlights.nailArt.title": "Nail Art Service",
 		"highlights.nailArt.description":
-			"Show off your unique style with custom nail art made just for you. Show off your unique style with custom nail art made just for you.",
+			"Your nails, your style. From soft and classy looks to trendy and eye-catching designs, we create nail art that helps you feel confident and express yourself in your own style.",
 		"highlights.nailArt.button": "Explore Nail Art",
 		"highlights.pressOn.title": "Press-on Nails",
 		"highlights.pressOn.description":
-			"Need beautiful nails in minutes? Our press-on collection is your go-to solution! Practical, stylish, and looks just like salon-quality nails.",
+			"Beautiful nails are what we want, right? Our handmade press-on nails give you a salon inspired look in just minutes, making them perfect for busy days, special events, or whenever you want a quick glow-up. Our press-on nails package is already included; cuticle pusher, nail buffer, alcohol swab, and glue gel.",
 		"highlights.pressOn.button": "Shop Press Ons",
 
 		// About Us
 		"about.title": "About Us",
 		"about.background.title": "Our Story",
 		"about.background.description":
-			"Dose of Nails was born from our love for nail art and our desire to make beautiful nails accessible to everyone. We believe nails are not just about appearance—they’re also a way to express yourself. That’s why every service we offer is designed to be as comfortable, personal, and of course, tailored to your style.",
+			"Dose of Nails began with a simple passion for creativity and self-expression. What started as a hobby of experimenting with different nail designs soon grew into a dream of creating nails to make people feel confident, relaxed, and beautiful. We noticed that many people wanted stylish, high quality nails but often struggled to find a place that truly understood their personal style. That inspired us to build a brand that combines creativity, comfort, and attention to detail in every service we provide.
+			The name Dose of Nails reflects our belief that everyone deserves a little boost of confidence and happiness in their daily lives. Just like a daily dose of something you love, beautiful nails can brighten your mood and help you express who you are. From elegant everyday looks to unique artistic designs, every set of nails is created
+with care, passion, and a commitment to making each client feel special.
+Today, Dose of Nails is more than just a nail studio. It is a welcoming space where creativity comes to life and every client is treated like a friend. We are dedicated to helping you express your personality through beautiful nails while ensuring every visit is comfortable, enjoyable, and memorable. Whether you are preparing for a special occasion or simply treating yourself, we are here to bring your nail ideas to life and give you a little extra confidence with every appointment.",
 		"about.values.title": "Why you'll love it here",
 		"about.values.homeService": "Home Service",
 		"about.values.homeServiceDesc":
-			"Don’t feel like going out? No worries—we come to you! Enjoy professional nail care from the comfort of your home.",
+			"Don’t feel like going out? No worries, we come to you! Enjoy professional nail care from the comfort of your home.",
 		"about.values.creativity": "Creativity",
 		"about.values.creativityDesc":
-			"Every nail is a canvas. We're here to bring your ideas to life with unique, stand-out nail art.",
+			"Every nail is a canvas. We’re here to bring your ideas to life with unique and eye-catching nail art.",
 		"about.values.hygiene": "Hygiene",
 		"about.values.hygieneDesc":
-			"Your safety is our priority. We maintain the highest standards of cleanliness and sanitation.",
+			"Your safety is our priority. We maintain high standards of cleanliness and sanitation for every treatment.",
 		"about.values.professional": "Professional",
 		"about.values.professionalDesc":
-			"Cleanliness is a must. All tools and processes are maintained with high standards to keep you safe and comfortable.",
+			"Our team is dedicated to providing quality service with precision, comfort, and attention to detail.",
 		"about.mission.title": "Our Mission",
 		"about.mission.statement":
-			"Our mission is to create an elegant and personalized nail care experience with the highest quality. Every detail matters to us, so you can enjoy results that feel beautiful, comfortable, and effortlessly refined",
+			"At Dose of Nails, our mission is to make self-care enjoyable, accessible, and personalized for everyone. We are dedicated to creating beautiful nails that reflect your unique style while providing a home service and friendly nail artist where you can feel comfortable being yourself.",
 
 		// Services & Products
 		"serviceProduct.title": "Services & Products",
@@ -60,15 +63,15 @@ const translations = {
 		"serviceProduct.services.title": "Our Services",
 		"serviceProduct.services.manicure.title": "Manicure",
 		"serviceProduct.services.manicure.description":
-			"A basic nail treatment that instantly makes your hands look cleaner, neater, and fresh. From shaping and cuticle care to a smooth, polished finish.",
-		"serviceProduct.services.manicure.price": "Starts at Rp. 35.000",
-		"serviceProduct.services.gelArt.title": "Nail Art Gel",
+			"A basic nail treatment that instantly makes your hands look cleaner, neater, and fresh. Includes shaping, cuticle care, and a polished finish.",
+		"serviceProduct.services.manicure.price": "Only For Rp. 35.000",
+		"serviceProduct.services.gelArt.title": "Gel Polish",
 		"serviceProduct.services.gelArt.description":
-			"Express your unique style with long-lasting, detailed gel nail art. From minimal designs to artistic looks, everything can be tailored to your vibe.",
-		"serviceProduct.services.gelArt.price": "Starts at Rp. 70.000",
+			"Express your unique style with long-lasting and detailed gel polish. From plain looks to artistic designs, everything can be customized.",
+		"serviceProduct.services.gelArt.price": "Start at Rp. 70.000",
 		"serviceProduct.services.3dDesign.title": "Soft Gel Tip Extension",
 		"serviceProduct.services.3dDesign.description":
-			"Want longer nails with a flawless shape? Soft gel tips are the perfect choice for a natural, elegant look.",
+			"Want longer nails with a flawless shape? Soft gel tips are perfect for achieving a natural yet elegant appearance.",
 		"serviceProduct.services.3dDesign.price": "Starts at Rp. 120.000",
 		"serviceProduct.products.title": "Our Products",
 		"serviceProduct.products.pressOn.title": "Press-on Nails",
@@ -101,11 +104,11 @@ const translations = {
 		"team.fadhilah.name": "Fadhilah",
 		"team.fadhilah.role": "Senior Nail Artist",
 		"team.fadhilah.bio":
-			"Fadhilah has a strong passion for nail art, especially detailed and unique 3D designs. With a keen eye for artistry and a deep love for creativity, Fadhilah brings every client's nail vision to life with precision and care. Whether it's an intricate 3D sculpture or a minimalist masterpiece, Fadhilah is dedicated to making sure every set feels personal, polished, and absolutely stunning.",
+			"Fadhilah has a strong passion for nail art, especially detailed and unique 3D designs such as polkadots, mermaid designs, etc. With creativity and precision, Fadhilah brings every client’s nail vision to life. Whether it’s an intricate sculpture or a minimalist masterpiece, every set is crafted with care and attention to detail.",
 		"team.amelia.name": "Amelia",
 		"team.amelia.role": "Senior Press-on Specialist",
 		"team.amelia.bio":
-			"Amelia is an expert in press-on nails — practical yet stylish, perfect for everyday beauty. With a sharp sense of style and a genuine passion for making nails accessible to everyone, Amelia crafts custom press-on sets that are as durable as they are beautiful. She believes that gorgeous nails shouldn't be complicated, and she's here to make sure every client leaves feeling confident and effortlessly glam.",
+			"Amelia specializes in press-on nails that are practical, stylish, and perfect for everyday beauty. She creates custom press-on sets that are durable, comfortable, and effortlessly glamorous. Amelia believes beautiful nails should always feel easy and accessible for everyone.",
 
 		// Booking
 		"booking.title": "Ready for a glow-up? Book now!",

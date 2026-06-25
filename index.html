@@ -79,6 +79,11 @@
 			img[loading="lazy"]:not([src]) {
 				opacity: 0;
 			}
+
+			/* Prevent SVG children from being click targets */
+			button svg, button i {
+				pointer-events: none;
+			}
 		</style>
 
 		<!-- EmailJS SDK -->
@@ -194,7 +199,7 @@
 		<section class="relative h-screen flex items-center justify-center">
 			<div class="absolute inset-0">
 				<img
-					src="img/background 2.HEIC"
+					src="img/header baru.jpg"
 					alt="Dose of Nails Salon Interior"
 					class="w-full h-full object-cover"
 				/>
@@ -538,7 +543,7 @@
 									></span>
 									<a
 										href="#contact"
-										class="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
+										class="px-4 py-2 border-2 border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
 									>
 										Book Now
 									</a>
@@ -552,7 +557,7 @@
 						>
 							<div class="h-64 overflow-hidden">
 								<img
-									src="img/nail art gel.HEIC"
+									src="img/gambar gel polish.jpeg"
 									alt="Nail Art Gel"
 									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
 								/>
@@ -587,7 +592,7 @@
 						>
 							<div class="h-64 overflow-hidden">
 								<img
-									src="img/soft gel tip extension.HEIC"
+									src="img/gambar soft gel tip extension.jpeg"
 									alt="3D Design"
 									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
 								/>
@@ -631,7 +636,7 @@
 						>
 							<div class="h-64 overflow-hidden">
 								<img
-									src="img/FullSizeRender.HEIC"
+									src="img/press on nails.jpeg"
 									alt="Press-on Nails"
 									class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
 								/>
