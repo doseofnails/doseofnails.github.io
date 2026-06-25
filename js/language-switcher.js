@@ -8,7 +8,7 @@ function t(key) {
 function updateContent() {
 	// Update all elements with data-i18n attribute
 	document.querySelectorAll("[data-i18n]").forEach((element) => {
-		// if (element.closest('#cusdis_thread')) return; // ← add this
+		if (element.closest("#cusdis_thread")) return; // ← add this
 		const key = element.getAttribute("data-i18n");
 		const translation = t(key);
 
