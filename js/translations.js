@@ -64,15 +64,15 @@ const translations = {
 		"serviceProduct.services.manicure.title": "Manicure",
 		"serviceProduct.services.manicure.description":
 			"A basic nail treatment that instantly makes your hands look cleaner, neater, and fresh. Includes shaping, cuticle care, and a polished finish.",
-		"serviceProduct.services.manicure.price": "Only For Rp. 35.000",
+		"serviceProduct.services.manicure.price": "Only For Rp. 35,000",
 		"serviceProduct.services.gelArt.title": "Gel Polish",
 		"serviceProduct.services.gelArt.description":
 			"Express your unique style with long-lasting and detailed gel polish. From plain looks to artistic designs, everything can be customized.",
-		"serviceProduct.services.gelArt.price": "Start at Rp. 70.000",
+		"serviceProduct.services.gelArt.price": "Start at Rp. 70,000",
 		"serviceProduct.services.3dDesign.title": "Soft Gel Tip Extension",
 		"serviceProduct.services.3dDesign.description":
 			"Want longer nails with a flawless shape? Soft gel tips are perfect for achieving a natural yet elegant appearance.",
-		"serviceProduct.services.3dDesign.price": "Starts at Rp. 120.000",
+		"serviceProduct.services.3dDesign.price": "Starts at Rp. 120,000",
 		"serviceProduct.products.title": "Our Products",
 		"serviceProduct.products.pressOn.title": "Press-on Nails",
 		"serviceProduct.products.pressOn.description":
